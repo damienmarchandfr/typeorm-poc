@@ -55,8 +55,8 @@
 		// "inlineSources": true,
 
 		/* Experimental Options */
-		// "experimentalDecorators": true,
-		// "emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
 
 		/* Compiler Plugins */
 		"plugins": [
