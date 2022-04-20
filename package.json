@@ -20,7 +20,8 @@
 		"prepublishOnly": "yarn build",
 		"test": "jest",
 		"test:watch": "jest --watch --verbose false",
-		"dev": "ts-node-dev --respawn src/index.ts"
+		"dev:relation": "ts-node-dev --respawn src/relations/index.ts",
+		"dev:json": "ts-node-dev --respawn src/json/index.ts"
 	},
 	"dependencies": {
 		"pg": "^8.7.3",
