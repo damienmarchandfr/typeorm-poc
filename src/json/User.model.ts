@@ -1,3 +1,4 @@
+import { SIGINT } from 'constants'
 import {
 	Entity,
 	PrimaryGeneratedColumn,
@@ -6,6 +7,8 @@ import {
 	JoinColumn,
 	OneToMany,
 } from 'typeorm'
+import { Main } from './main.model'
+import { Sign } from './sign.decorator'
 
 interface File {
 	name: string
@@ -13,7 +16,7 @@ interface File {
 }
 
 @Entity()
-export class User {
+export class User extends Main {
 	@PrimaryGeneratedColumn()
 	id!: number
 
@@ -27,6 +30,7 @@ export class User {
 	@Column('json', {
 		nullable: true,
 	})
+	@Sign()
 	picture!: File
 
 	// ------------ MESSAGES ----------
@@ -34,5 +38,6 @@ export class User {
 	@Column('json', {
 		nullable: true,
 	})
+	@Sign()
 	files!: File[]
 }

@@ -1,5 +1,19 @@
 import { DataSource } from 'typeorm'
+import { Main } from './main.model'
+import { getStorage } from './store'
 import { User } from './User.model'
+
+export async function sign<T extends Main>(toSign: T) {
+	const name = toSign.getName()
+	const storage = getStorage()
+	const fields = storage[name] || []
+
+	for (const field of fields) {
+		console.log(field)
+	}
+
+	// Sign data
+}
 
 export const AppDataSource = new DataSource({
 	type: 'postgres',
@@ -56,4 +70,6 @@ export const AppDataSource = new DataSource({
 		id: user.id,
 	})
 	console.log(userCreated)
+
+	sign(userCreated as User)
 })()
