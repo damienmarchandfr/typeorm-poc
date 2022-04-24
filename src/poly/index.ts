@@ -60,12 +60,12 @@ export const AppDataSource = new DataSource({
 	}
 	await dataSource.getRepository(Files).save(files)
 
-    
 	user.files = files
 	await dataSource.getRepository(User).save(user)
 
 	u = await dataSource.getRepository(User).findOneBy({
 		id: user.id,
 	})
+
 	console.log(u)
 })()
