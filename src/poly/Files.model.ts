@@ -2,20 +2,19 @@ import {
 	Column,
 	Entity,
 	JoinColumn,
+	OneToMany,
 	OneToOne,
 	PrimaryGeneratedColumn,
 } from 'typeorm'
 import { FileContent } from './FileContent.model'
 
 @Entity()
-export class File {
+export class Files {
 	@PrimaryGeneratedColumn()
 	id!: number
 
-	@OneToOne(() => FileContent, {
+	@OneToMany(() => FileContent, (fileContent) => fileContent.files, {
 		eager: true,
-		nullable: false,
 	})
-	@JoinColumn()
-	content!: FileContent
+	contents!: FileContent[]
 }

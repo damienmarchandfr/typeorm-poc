@@ -21,7 +21,8 @@
 		"test": "jest",
 		"test:watch": "jest --watch --verbose false",
 		"dev:relation": "ts-node-dev --respawn src/relations/index.ts",
-		"dev:json": "ts-node-dev --respawn src/json/index.ts"
+		"dev:json": "ts-node-dev --respawn src/json/index.ts",
+		"dev:poly": "ts-node-dev --respawn src/poly/index.ts"
 	},
 	"dependencies": {
 		"pg": "^8.7.3",
